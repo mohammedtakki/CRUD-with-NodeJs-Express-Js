@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Update Articles</title>
+   <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+   
+</body>
+</html>
+
+<div class="container">
+   <h1 style="text-align: center;color: aqua;margin-top: 50px;">Update Articles</h1>
+<form  action="/articles/putarticle/<%= article.id %>" method="post" >
+<div class="form-group row">
+   <div class="form-group">
+      <label  for="smartphone" class="form-label mt-4">Smartphone</label>
+      <input name="smartphone"  type="text" class="form-control" id="Smartphone" value="<%= article.smartphone %>" aria-describedby="emailHelp" placeholder="Add Smartphone">
+      <% if(error && error.path =="smartphone") {  %>
+         <div class="alert alert-danger">
+          <%= error.message  %>  
+         </div>
+         <% } %>
+      <label for="description" class="form-label mt-4">Description</label>
+      <input name="description" type="text" class="form-control" id="Description" value="<%= article.description %>" aria-describedby="emailHelp" placeholder="Description">
+      <label for="category_id" class="form-label mt-4">Category_id</label>
+      <input name="category_id" type="number" class="form-control" id="category_id" value="<%= article.category_id %>" aria-describedby="emailHelp" placeholder="">
+      <% if(error && error.path =="category_id") {  %>
+         <div class="alert alert-danger">
+          <%= error.message  %>  
+         </div>
+         <% } %>
+    </div>
+   
+ </div>
+ <button type="submit" class="btn btn-success ; my-3" >Update</button>
+ 
+</form>
+</div>
